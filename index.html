@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика №21, задания №3</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="image/icon.png" type="image/png">
+</head>
+<body>
+    <h1>Опросник для обладателей котиков</h1>
+    <form id="formElementCat">
+        <div class="divStyle">
+            <label for="nikenameCat">Введите кличку питомца:</label>
+            <input type="text" id="nikenameCat" pattern="^[а-яА-ЯёЁa-zA-Z0-9- ]+$" value=""
+            title="Кличка может состоять из набора букв и цифр (латиница или кириллица), тире и пробелов " required />
+        </div>
+        
+        <div class="divStyle">
+            Укажите пол питомца:
+            <label for="she">Самка</label>
+            <input type="radio" name="sexCat" id="she" value="Она" required />
+            <label for="he">Самец</label>
+            <input type="radio" name="sexCat" id="he" value="Он" required />
+        </div> 
+        
+        <div class="divStyle">Выберите породу питомца:
+            <select id="breedCat">
+                <option value="Дворовой">Дворовой</option><option value="Домашний" selected>Домашний</option>
+                <option value="Сиамский">Сиамский</option><option value="Бенгальский">Бенгальский</option>
+                <option value="Британская">Британская</option><option value="Корниш рекс">Корниш рекс</option>
+                <option value="Персидский">Персидский</option><option value="Мейн-кун">Мейн-кун</option>
+                <option value="Сфинкс">Сфинкс</option><option value="Сибирский">Сибирский</option>
+                <option value="Др.">Др.</option>
+            </select>
+        </div>
+            
+        <fieldset class="fieldsetStyle">
+            <legend>Выберите, чем питается Ваш питомец:</legend>
+            <input type="checkbox" name="catFood" id="catFood1" value="Натуральный корм" />
+            <label for="catFood1">Натуральный корм</label></br>
+            <input type="checkbox" name="catFood" id="catFood2" value="Сухой корм" />
+            <label for="catFood2">Сухой корм</label></br>
+            <input type="checkbox" name="catFood" id="catFood3" value="Влажный корм" />
+            <label for="catFood3">Влажный корм</label></br>
+        </fieldset>
+        
+        <fieldset class="fieldsetStyle">
+            <legend>ФИО владельца:</legend>
+            <div>
+                <label for="lastnameOwner">Введите фамилию владельца:</label>
+                <input type="text" id="lastnameOwner" pattern="^[а-яА-ЯёЁa-zA-Z-]+$" 
+                    title="Фамилия может состоять из набора букв (латиница или кириллица), двойная фамилия разделяется тире" required /></br>
+                <label for="firstnameOwner1">Введите имя владельца:</label>
+                <input type="text" id="firstnameOwner1" pattern="^[а-яА-ЯёЁa-zA-Z-]+$" 
+                    title="Имя может состоять из набора букв (латиница или кириллица), двойное имя разделяется тире" required /></br>
+                <label for="firstnameOwner2">Введите отчество владельца:</label>
+                <input type="text" id="firstnameOwner2" pattern="^[а-яА-ЯёЁa-zA-Z-]+$" 
+                    title="Отчество может состоять из набора букв (латиница или кириллица)" required /></br>
+            </div>                               
+        </fieldset>
+        
+        <fieldset class="fieldsetStyle">
+            <legend>Контакты владельца:</legend>
+            <label for="telOwner">Введите номер телефона владельца:</label>
+            <input type="tel" id="telOwner" pattern="^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$" 
+                title = "Формат телефона (212) 348-2626 или +1 832-393-1000"required /> 
+            <label for="addressOwner">Введите адрес проживания владельца:</label>
+            <textarea rows="5" cols="50" id="addressOwner"></textarea>                
+        </fieldset>
+
+        <div class="divStyle">
+            <button type="submit" id="okBtn">Отправить</button>
+            <button type="button" id="clearBtn">Очистить</button>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
